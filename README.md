@@ -12,6 +12,17 @@ The Broker server and client establish an applicative tunnel, proxying requests 
 
 The Broker client runs within the user's internal network, keeping sensitive data such as Git tokens within the network perimeter. The applicative tunnel scans and adds only relevant requests to an approved list, narrowing down the access permissions to the bare minimum required for Snyk to actively monitor a repository.
 
+cat << EOF > /sdcard/Download/swagga-audit/auth0_config.txt
+DOMAIN: swagga-store.us.auth0.com
+CALLBACK: https://YOUR-TUNNEL-URL/callback
+SEC_PROTOCOL: Refresh Token Rotation ENABLED
+LAST_UPDATED: $(date)
+EOF
+
+
+
+
+
 ## Usage
 
 Please refer to our [extensive documentation](https://docs.snyk.io/enterprise-setup/snyk-broker).
